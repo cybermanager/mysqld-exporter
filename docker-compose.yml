@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  node_exporter:
+    container_name: mysqld_exporter
+    image: prom/mysqld-exporter:latest
+    env_file:
+      - .env
+    network_mode: host
+    restart: unless-stopped
